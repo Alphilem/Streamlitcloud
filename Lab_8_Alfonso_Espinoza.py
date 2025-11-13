@@ -30,7 +30,7 @@ from openai import OpenAI
 from datetime import datetime
 import io
 
-spotify_df=pd.read_csv("C:/Users/axesp/OneDrive/Desktop/Analisis_Algoritmos/IA/spotify-2023.csv")
+spotify_df=pd.read_csv("spotify-2023.csv")
 spotify_df=spotify_df.sort_values("streams",ascending=False)
 spotify_df=spotify_df.head(150)
 
@@ -307,4 +307,5 @@ if st.session_state.spotify_df is None:
 st.markdown("---")
 
 st.caption("🎵 ChatBot Especializado en Spotify - Desarrollado con Streamlit y OpenAI")
+
 
