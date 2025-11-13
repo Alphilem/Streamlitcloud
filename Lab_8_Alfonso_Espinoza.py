@@ -1,3 +1,28 @@
+import sys
+import subprocess
+import importlib
+
+def install_required_packages():
+    """Automatically install required packages if missing"""
+    required_packages = [
+        'streamlit',
+        'openai', 
+        'pandas',
+        'numpy'
+    ]
+    
+    for package in required_packages:
+        try:
+            importlib.import_module(package)
+            print(f"✅ {package} is already installed")
+        except ImportError:
+            print(f"📦 Installing {package}...")
+            subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+# Install packages before importing
+install_required_packages()
+
+
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -282,3 +307,4 @@ if st.session_state.spotify_df is None:
 st.markdown("---")
 
 st.caption("🎵 ChatBot Especializado en Spotify - Desarrollado con Streamlit y OpenAI")
+
