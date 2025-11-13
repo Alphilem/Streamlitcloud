@@ -280,4 +280,5 @@ if st.session_state.spotify_df is None:
 
 # Pie de página
 st.markdown("---")
+
 st.caption("🎵 ChatBot Especializado en Spotify - Desarrollado con Streamlit y OpenAI")
